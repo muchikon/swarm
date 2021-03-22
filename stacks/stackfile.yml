@@ -17,7 +17,7 @@ services:
       restart_policy:
         condition: on-failure
       placement:
-        constraints: [node.role == worker]
+        constraints: [node.labels.ambiente == desa]
 
   db:
     image: mongo
@@ -29,5 +29,5 @@ services:
       restart_policy:
         condition: on-failure
       placement:
-        constraints: [node.role == worker]
+        constraints: [node.labels.ambiente == qa]
     
